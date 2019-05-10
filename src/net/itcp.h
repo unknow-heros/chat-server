@@ -26,6 +26,9 @@ int itcp_bind(int tcp_fd,struct sockaddr* addr,socklen_t addrlen);
 /*连接UDP服务器*/
 int itcp_connect(int tcp_fd, const struct sockaddr *addr,socklen_t addrlen);
 
+/*开始监听tcp_fd 套接字*/
+int itcp_listen(int tcp_fd);
+
 /*创建sockaddr_in 结构体,用于绑定,连接或者发送数据*/
 struct sockaddr_in * set_sockaddr_in(int domain,const char * ip, unsigned short port);
 

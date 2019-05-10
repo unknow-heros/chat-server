@@ -60,6 +60,11 @@ int itcp_connect(int tcp_fd, const struct sockaddr *addr,socklen_t addrlen)
      return connect(tcp_fd,addr,addrlen);
 }
 
+int itcp_listen(int tcp_fd)
+{
+    return listen(tcp_fd,1024);
+}
+
 struct sockaddr_in * set_sockaddr_in(int domain,const char * ip, unsigned short port)
 {
     unsigned char buf[sizeof(struct in_addr)] = {0};
@@ -109,8 +114,6 @@ void dis_sockaddr_in6(struct sockaddr_in6 * addr6)
         free(addr6);
     }
 }
-
-
 
 
 int itcp_accept(int tcp_fd, struct sockaddr *addr, socklen_t *addrlen)
