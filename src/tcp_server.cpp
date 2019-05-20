@@ -33,19 +33,17 @@ int main()
 
     std::cout<< " tcp serer started " <<std::endl;
     while(1) 
-    {
-        /* */
-        
+    {      
         int cfd = itcp_accept(tcp_fd,NULL,NULL);
         if(cfd < 0) {
             continue;
         }
-        
+
         std::cout << "来了一个TCP连接" << std::endl;
         ssize_t num =  itcp_send(cfd,hello,strlen(hello),0);
         
         std::cout << "给TCP 发送了:" << num <<std::endl;
-
+        close(cfd);
     }
 
     dis_sockaddr_in(addr);

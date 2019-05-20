@@ -15,10 +15,10 @@ extern "C" {
 int itcp_socket(int domain);
 
 /*设置udp套接字为非阻塞*/
-int itcp_set_nonblock(int udp_fd);
+int itcp_set_nonblock(int tcp_fd);
 
 /*设置udp套接字为阻塞*/
-int itcp_set_block(int udp_fd);
+int itcp_set_block(int tcp_fd);
 
 /*绑定IP地址和端口*/
 int itcp_bind(int tcp_fd,struct sockaddr* addr,socklen_t addrlen);
